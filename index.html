@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand|Hind" rel="stylesheet">
+  <title>Silverton Sheltering Services</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="top-container" aria-roledescription="navigation">
+    <div class="menu-opener">
+      <i id="menu-open" class="material-icons">menu</i>
+      <i id="menu-clox" class="material-icons nosho">close</i>
+    </div>
+    <div class="org-title">
+      <img src="./SSS_Logo_No_Text_200.png" />
+      <h1>Silverton Sheltering Services</h1>
+    </div>
+    <div class="menu-options">
+      <ul class="menu-items">
+        <li class="nav-item">Mission</li>
+        <li class="nav-item">Partners</li>
+        <li class="nav-item">Program</li>
+        <li class="nav-item">Volunteer</li>
+        <li class="nav-item">Contact</li>
+        <li class="nav-item donate">Donate</li>
+        <li class="nav-item search"><i class="material-icons">search</i></li>
+      </ul>
+    </div>
+  </div>
+  <div>
+      
+  </div>
+  </div>
+
+  <script>
+    function openMenu() {
+      document.getElementsByClassName('menu-options')[0].classList.add('open');
+      document.getElementById('menu-open').classList.add('nosho');
+      document.getElementById('menu-clox').classList.remove('nosho');
+    }
+
+    function closeMenu() {
+      document.getElementsByClassName('menu-options')[0].classList.remove('open');
+      document.getElementById('menu-clox').classList.add('nosho');
+      document.getElementById('menu-open').classList.remove('nosho');
+    }
+
+    document.getElementById('menu-open').addEventListener('click', openMenu);
+    document.getElementById('menu-clox').addEventListener('click', closeMenu);
+  </script>
+</body>
+</html>

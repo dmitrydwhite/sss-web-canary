@@ -1,0 +1,125 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Quicksand', sans-serif;;
+}
+
+.menu-options > ul {
+  list-style-type: none;
+  font-family: 'Hind', sans-serif;
+}
+
+.nosho {
+  display: none;
+}
+
+/* Mobile Styling */
+@media only screen and (max-width: 999px) {
+  .menu-opener {
+    text-align: right;
+    padding-right: 18px;
+  }
+
+  .menu-opener > i {
+    font-size: 32px;
+  }
+
+  .menu-options {
+    position: absolute;
+    background-color: white;
+    width: 0;
+    height: 100vh;
+    /* visibility: hidden; */
+    color: rgba(0, 0, 0, 0);
+    transition: width 0.8s, color 0.4s ease-in-out;
+  }
+
+  .menu-options.open {
+    width: 100%;
+    color:black;
+    transition: width 0.8s, color 0.8s ease-in-out;
+  }
+
+  .nav-item {
+    font-size: 36px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .menu-options.open .nav-item.donate {
+    font-weight: bold;
+    color: orange;
+    transition: color 0.8s ease-in-out;
+  }
+
+  .nav-item.search {
+    display: none;
+  }
+}
+
+/* Desktop Styling */
+@media only screen and (min-width: 1000px) {
+  .top-container {
+    margin-top: 8px;
+    height: 215px;
+    border-bottom: 1px solid rgb(27, 69, 83);
+  }
+
+  h1 {
+    color: rgb(27, 69, 83);
+    height: 200px;
+    line-height: 200px;
+  }
+
+  .org-title > img {
+    padding-left: 14px;
+    float: left;
+    margin-right: 18px;
+  }
+
+  .menu-opener {
+    display: none;
+  }
+
+  .menu-options {
+    position: absolute;
+    right: 18px;
+    top: 0;
+    padding-top: 16px;
+  }
+
+  .nav-item {
+    float: left;
+    padding: 9px 18px 6px 18px;
+  }
+
+  .nav-item.donate {
+    /* border-radius: 20px;
+    border: 2px solid red;
+    transition: color 0.3s, background-color 0.3s ease-in-out; */
+    background-color: #B24345;
+    color: white;
+    border-radius: 20px;
+  }
+
+  .nav-item:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .nav-item.donate:hover {
+    background-color: #D34345;
+    color: white;
+    text-decoration: none;
+  }
+}
