@@ -11,36 +11,87 @@
 </head>
 <body>
   <div class="top-container" aria-roledescription="navigation">
-    <div class="menu-opener">
+    <div class="menu-opener" id="sticky-menu">
       <i id="menu-open" class="material-icons">menu</i>
       <i id="menu-clox" class="material-icons nosho">close</i>
     </div>
     <div class="org-title">
-      <img src="./SSS_Logo_No_Text_200.png" />
-      <h1>Silverton Sheltering Services</h1>
+      <img src="./assets/SSS_Logo_No_Text_200.png" />
+      <div class="heading-container">
+        <h1>Silverton Sheltering Services</h1>
+        <h2>Dedicated to meeting the needs of our neighbors experiencing homelessness</h2>
+      </div>
     </div>
     <div class="menu-options">
       <ul class="menu-items">
-        <li class="nav-item">Mission</li>
+        <li class="nav-item"><a href="#mission">Mission</a></li>
         <li class="nav-item">Partners</li>
-        <li class="nav-item">Program</li>
+        <li class="nav-item"><a href="#programs">Programs</a></li>
         <li class="nav-item">Volunteer</li>
         <li class="nav-item">Contact</li>
         <li class="nav-item donate">Donate</li>
         <li class="nav-item search"><i class="material-icons">search</i></li>
       </ul>
     </div>
+    <!-- <div style="clear: both;"></div> -->
   </div>
-  <div>
-      
+  <div class="main-content">
+    <div id="mission" class="menu-title">
+      Mission
+    </div>
+    <p class="info-para">
+      Silverton Sheltering Services collaborates with neighbors and organizations to provide a framework that supports, develops and provides services to, and advocates for our vulnerable neighbors in order for them to transition toward fuller security, stability, and purpose within our community.
+    </p>
+    <div id="vision" class="menu-title">
+      Vision
+    </div>
+    <p class="info-para">Silverton Sheltering Services (SSS) provides leadership and focus to a collaborative community response to the growing crisis of homelessness in the Silverton area. Through a diverse network of grassroots community partnerships, private and public initiatives, and collective hospitality, we aim to respond to the crisis of homelessness in Silverton.</p>
+
+    <div id="programs" class="menu-title">
+      Programs
+    </div>
+    <p>Primis semper accusamus usu id, sed facer quaestio an. Sea an nemore facilisis, ut nec option delenit complectitur. Movet eruditi noluisse te vis. Ornatus mandamus liberavisse ius eu. Solet prodesset inciderint pro et, vero accumsan pri an, posse libris explicari nec ei.</p>
+
+    <p>Primis semper accusamus usu id, sed facer quaestio an. Sea an nemore facilisis, ut nec option delenit complectitur. Movet eruditi noluisse te vis. Ornatus mandamus liberavisse ius eu. Solet prodesset inciderint pro et, vero accumsan pri an, posse libris explicari nec ei.</p>
+
+    <p>Primis semper accusamus usu id, sed facer quaestio an. Sea an nemore facilisis, ut nec option delenit complectitur. Movet eruditi noluisse te vis. Ornatus mandamus liberavisse ius eu. Solet prodesset inciderint pro et, vero accumsan pri an, posse libris explicari nec ei.</p>
+
+    <p>Primis semper accusamus usu id, sed facer quaestio an. Sea an nemore facilisis, ut nec option delenit complectitur. Movet eruditi noluisse te vis. Ornatus mandamus liberavisse ius eu. Solet prodesset inciderint pro et, vero accumsan pri an, posse libris explicari nec ei.</p>
+
+    <p>Primis semper accusamus usu id, sed facer quaestio an. Sea an nemore facilisis, ut nec option delenit complectitur. Movet eruditi noluisse te vis. Ornatus mandamus liberavisse ius eu. Solet prodesset inciderint pro et, vero accumsan pri an, posse libris explicari nec ei.</p>
+
+    <p>Primis semper accusamus usu id, sed facer quaestio an. Sea an nemore facilisis, ut nec option delenit complectitur. Movet eruditi noluisse te vis. Ornatus mandamus liberavisse ius eu. Solet prodesset inciderint pro et, vero accumsan pri an, posse libris explicari nec ei.</p>
+
+    <p>Primis semper accusamus usu id, sed facer quaestio an. Sea an nemore facilisis, ut nec option delenit complectitur. Movet eruditi noluisse te vis. Ornatus mandamus liberavisse ius eu. Solet prodesset inciderint pro et, vero accumsan pri an, posse libris explicari nec ei.</p>
+
+    <p>Primis semper accusamus usu id, sed facer quaestio an. Sea an nemore facilisis, ut nec option delenit complectitur. Movet eruditi noluisse te vis. Ornatus mandamus liberavisse ius eu. Solet prodesset inciderint pro et, vero accumsan pri an, posse libris explicari nec ei.</p>
+
+    <p>Primis semper accusamus usu id, sed facer quaestio an. Sea an nemore facilisis, ut nec option delenit complectitur. Movet eruditi noluisse te vis. Ornatus mandamus liberavisse ius eu. Solet prodesset inciderint pro et, vero accumsan pri an, posse libris explicari nec ei.</p>
+
+    <p id="last">Has esse fabulas philosophia in, probo dicant sententiae his eu. Nec mutat equidem periculis ei. Vitae accumsan similique mea an, altera splendide aliquando no mea, his ut harum quodsi timeam. Quidam diceret nostrum pro ne. Ad minim harum melius mea, nam at singulis pertinax elaboraret. Vero dicunt equidem per an, an legere noster verear duo, dicat convenire ex his.</p>
   </div>
   </div>
 
   <script>
+  (function () {
+    function setMobileMenuItemClickListeners() {
+      for (var i=0; i<listItems.length; i++) {
+        listItems[i].addEventListener('click', closeMenu);
+      }
+    }
+
+    function clearAllMobileMenuListeners() {
+      for (var i=0; i<listItems.length; i++) {
+        listItems[i].removeEventListener('click', closeMenu);
+      }
+    }
+
     function openMenu() {
       document.getElementsByClassName('menu-options')[0].classList.add('open');
       document.getElementById('menu-open').classList.add('nosho');
       document.getElementById('menu-clox').classList.remove('nosho');
+
+      setMobileMenuItemClickListeners();
     }
 
     function closeMenu() {
@@ -49,8 +100,26 @@
       document.getElementById('menu-open').classList.remove('nosho');
     }
 
+    function toggleStickyMenuBorder(evt) {
+      if (menuOpener) {
+        var bodyTop = docBody.scrollTop;
+
+        if (bodyTop === 0) {
+          menuOpener.classList.remove('needs-border');
+        } else {
+          menuOpener.classList.add('needs-border');
+        }
+      }
+    }
+
+    var listItems = Array.prototype.slice.call(document.getElementsByClassName('nav-item'));
+    var menuOpener = document.getElementById('sticky-menu');
+    var docBody = document.getElementsByTagName('html')[0];
+
     document.getElementById('menu-open').addEventListener('click', openMenu);
     document.getElementById('menu-clox').addEventListener('click', closeMenu);
+    window.addEventListener('scroll', toggleStickyMenuBorder);
+  })();
   </script>
 </body>
 </html>
