@@ -11,18 +11,18 @@
 </head>
 <body>
   <div class="top-container" aria-roledescription="navigation">
-    <div class="menu-opener" id="sticky-menu">
+    <div class="menu-opener" id="sticky-mobile">
       <i id="menu-open" class="material-icons">menu</i>
       <i id="menu-clox" class="material-icons nosho">close</i>
     </div>
     <div class="org-title">
-      <img src="./assets/SSS_Logo_No_Text_200.png" />
+      <img src="https://goo.gl/MKFp62" />
       <div class="heading-container">
         <h1>Silverton Sheltering Services</h1>
         <h2>Dedicated to meeting the needs of our neighbors experiencing homelessness</h2>
       </div>
     </div>
-    <div class="menu-options">
+    <div class="menu-options" id="sticky-desktop">
       <ul class="menu-items">
         <li class="nav-item"><a href="#mission">Mission</a></li>
         <li class="nav-item">Partners</li>
@@ -101,19 +101,19 @@
     }
 
     function toggleStickyMenuBorder(evt) {
-      if (menuOpener) {
-        var bodyTop = docBody.scrollTop;
+      var els = [mobileMenu, desktopMenu].filter(function (x) { return x; });
+      var bodyTop = docBody.scrollTop;
 
-        if (bodyTop === 0) {
-          menuOpener.classList.remove('needs-border');
-        } else {
-          menuOpener.classList.add('needs-border');
-        }
+      if (bodyTop < 8) {
+        els.forEach(function (el) { el.classList.remove('needs-border'); });
+      } else {
+        els.forEach(function(el) { el.classList.add('needs-border'); });
       }
     }
 
     var listItems = Array.prototype.slice.call(document.getElementsByClassName('nav-item'));
-    var menuOpener = document.getElementById('sticky-menu');
+    var mobileMenu = document.getElementById('sticky-mobile');
+    var desktopMenu = document.getElementById('sticky-desktop');
     var docBody = document.getElementsByTagName('html')[0];
 
     document.getElementById('menu-open').addEventListener('click', openMenu);
