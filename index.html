@@ -33,10 +33,10 @@
         <li class="nav-item"><a href="#mission">Mission</a></li>
         <li class="nav-item"><a href="#programs">Programs</a></li>
         <li class="nav-item"><a href="#partners">Partners</a></li>
-        <li class="nav-item">Volunteer</li>
-        <li class="nav-item">Contact</li>
+        <li class="nav-item hold">Volunteer</li>
+        <li class="nav-item"><a href="#contact">Contact</a></li>
         <li class="nav-item donate">Donate</li>
-        <li class="nav-item search"><i class="material-icons">search</i></li>
+        <li class="nav-item search hold"><i class="material-icons">search</i></li>
       </ul>
     </div>
   </div>
@@ -108,60 +108,22 @@
     <p class="info-para">
       We work to ensure that individuals who have experienced homelessness have a real voice in the creation of our programs and services. SSS has established an Advisory Collaborative composed of diverse community representatives including individuals experiencing homelessness, civic leaders, social service agencies and volunteers, physical and mental health providers, faith leaders, community meal organizers, and educators. The urgency and enormity of need in our backyard warrants an “all hands on deck” approach to caring for one another. No single entity has a monopoly on this work. A dedication to sharing knowledge and resources allows us to bolster and learn from a broad coalition.
     </p>
+
+    <div id="last" class="menu-title">
+      <span id="contact"> &nbsp; </span>
+      Contact
+    </div>
+    <p class="info-para">
+      <p class="info-para">Phone: <a class="contact-phone" href="tel:971-343-1099">971-343-1099</a></p>
+      <p class="info-para">Email:&nbsp;
+        <a href="mailto:sarah@shelteringsilverton.org">sarah@shelteringsilverton.org</a>
+      </p>
+      <p class="info-para">Mailing: 345 Westfield St, Silverton OR  97381</p>
+    </p>
+
+    <div id="follower"></div>
   </div>
 
-  <!-- <script src="./scripts/image-slo-load.js"></script> -->
-  <script>
-  (function () {
-    function setMobileMenuItemClickListeners() {
-      for (var i=0; i<listItems.length; i++) {
-        listItems[i].addEventListener('click', closeMenu);
-      }
-    }
-
-    function clearAllMobileMenuListeners() {
-      for (var i=0; i<listItems.length; i++) {
-        listItems[i].removeEventListener('click', closeMenu);
-      }
-    }
-
-    function openMenu() {
-      document.getElementsByClassName('menu-options')[0].classList.add('open');
-      document.getElementById('menu-open').classList.add('nosho');
-      document.getElementById('menu-clox').classList.remove('nosho');
-
-      setMobileMenuItemClickListeners();
-    }
-
-    function closeMenu() {
-      document.getElementsByClassName('menu-options')[0].classList.remove('open');
-      document.getElementById('menu-clox').classList.add('nosho');
-      document.getElementById('menu-open').classList.remove('nosho');
-    }
-
-    function toggleStickyMenuBorder(evt) {
-      var els = [mobileMenu, desktopMenu].filter(function (x) { return x; });
-      var bodyTop = docBody.scrollTop;
-
-      if (bodyTop < 8) {
-        els.forEach(function (el) { el.classList.remove('needs-border'); });
-      } else {
-        els.forEach(function(el) { el.classList.add('needs-border'); });
-      }
-    }
-
-    var listItems = Array.prototype.slice.call(document.getElementsByClassName('nav-item'));
-    var mobileMenu = document.getElementById('sticky-mobile');
-    var desktopMenu = document.getElementById('sticky-desktop');
-    var docBody = document.getElementsByTagName('html')[0];
-
-    document.getElementById('menu-open').addEventListener('click', openMenu);
-    document.getElementById('menu-clox').addEventListener('click', closeMenu);
-    window.addEventListener('scroll', toggleStickyMenuBorder);
-  })();
-  </script>
-  <script>
-    // Contact Number: 971-343-1099
-  </script>
+  <script src="./scripts/main.js"></script>
 </body>
 </html>

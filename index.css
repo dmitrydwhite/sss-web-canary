@@ -23,6 +23,10 @@ h1, h2 {
   display: none;
 }
 
+.nav-item.hold {
+  display: none;
+}
+
 .nav-item > a {
   color: inherit;
   text-decoration: none;
@@ -34,12 +38,14 @@ h1, h2 {
 }
 
 .menu-title {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+  font-family: 'Quicksand', sans-serif;
   font-size: 24px;
   padding-top: 58px;
 }
 
 .sub-title {
+  font-family: 'Quicksand', sans-serif;
   font-style: italic;
   font-size: 20px;
   padding-bottom: 12px;
@@ -47,7 +53,8 @@ h1, h2 {
 }
 
 .info-para {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+  font-family: 'Quicksand', sans-serif;
   font-size: 18px;
 }
 
@@ -207,6 +214,9 @@ h1, h2 {
     background-color: #B24345;
     color: white;
     border-radius: 20px;
+    /* TEMPORARY -- Accommodate "Coming Soon" text for now */
+    text-align: center;
+    min-width: 132px; 
   }
 
   .nav-item:hover {
