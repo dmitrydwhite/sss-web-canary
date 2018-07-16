@@ -10,13 +10,17 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <div class="top-container" aria-roledescription="navigation">
+  <div class="top-container" id="sticky-desktop" aria-roledescription="navigation">
     <div class="menu-opener" id="sticky-mobile">
       <i id="menu-open" class="material-icons">menu</i>
       <i id="menu-clox" class="material-icons nosho">close</i>
     </div>
     <div class="org-title">
-      <img src="./assets/SSS_Logo_BW_200.png" alt="Silverton Sheltering Services"/>
+      <div class="image-container">
+        <a href="#">
+          <img src="./assets/SSS_Logo_BW_200.png" alt="Silverton Sheltering Services"/>
+        </a>
+      </div>
       <div class="heading-container">
         <h1 style="display: none;">Silverton Sheltering Services</h1>
         <h2>
@@ -24,7 +28,7 @@
         </h2>
       </div>
     </div>
-    <div class="menu-options" id="sticky-desktop">
+    <div class="menu-options">
       <ul class="menu-items">
         <li class="nav-item"><a href="#mission">Mission</a></li>
         <li class="nav-item"><a href="#programs">Programs</a></li>
@@ -35,11 +39,11 @@
         <li class="nav-item search"><i class="material-icons">search</i></li>
       </ul>
     </div>
-    <!-- <div style="clear: both;"></div> -->
   </div>
   <div class="main-content">
+    <div id="mission" class="main-content-spacer"></div>
     <div class="mission-bg-container">
-      <div id="mission" class="menu-title">
+      <div class="menu-title">
         Mission
       </div>
       <p class="info-para">
@@ -52,14 +56,12 @@
     </div>
 
 
-    <div id="programs" class="menu-title">
+    <div class="menu-title">
+      <span id="programs"> &nbsp; </span>
       Programs
     </div>
 
     <div class="sub-title">Warming Shelter</div>
-    <!-- <div class="image-container" data-container-for="warming-shelter">
-      <img class="sub-image" src="./assets/vision/warming-shelter/primary.png" />
-    </div> -->
     <p class="info-para">
       SSS operates a winter warming shelter perennially. This shelter is open to individuals and families who seek shelter during winter weather. Historically this shelter has been generously hosted by local churches and we are actively seeking our own space to expand warming shelter operations and capacity.
     </p>
@@ -99,7 +101,10 @@
       Current economic conditions tell us that the housing crisis will continue and low-income Oregonians will continue to fall into homelessness. Advocating for affordable local housing solutions, social services, and fair treatment of our unhoused neighbors is the privilege and responsibility of our organization.
     </p>
 
-    <div id="partners" class="menu-title">Partnerships</div>
+    <div class="menu-title">
+      <span id="partners"> &nbsp; </span>
+      Partnerships
+    </div>
     <p class="info-para">
       We work to ensure that individuals who have experienced homelessness have a real voice in the creation of our programs and services. SSS has established an Advisory Collaborative composed of diverse community representatives including individuals experiencing homelessness, civic leaders, social service agencies and volunteers, physical and mental health providers, faith leaders, community meal organizers, and educators. The urgency and enormity of need in our backyard warrants an “all hands on deck” approach to caring for one another. No single entity has a monopoly on this work. A dedication to sharing knowledge and resources allows us to bolster and learn from a broad coalition.
     </p>
@@ -154,6 +159,9 @@
     document.getElementById('menu-clox').addEventListener('click', closeMenu);
     window.addEventListener('scroll', toggleStickyMenuBorder);
   })();
+  </script>
+  <script>
+    // Contact Number: 971-343-1099
   </script>
 </body>
 </html>

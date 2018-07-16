@@ -127,6 +127,12 @@ h1, h2 {
     border-bottom: 1px solid black;
   }
 
+  .menu-title > span {
+    margin-top: -52px;
+    padding-bottom: 52px;
+    display: block;
+  }
+
   img.sub-image {
     /* border: 1px solid black; */
     opacity: 1;
@@ -146,9 +152,16 @@ h1, h2 {
 /* Desktop Styling */
 @media only screen and (min-width: 1000px) {
   .top-container {
-    margin-top: 8px;
-    height: 215px;
-    /*border-bottom: 1px solid rgb(27, 69, 83);*/
+    top: 0;
+    height: 185px;
+    overflow:hidden;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+  }
+
+  .top-container.needs-border {
+    border-bottom: 1px solid black;
   }
 
   .heading-container {
@@ -168,7 +181,7 @@ h1, h2 {
     font-size: 16px;
   }
 
-  .org-title > img {
+  .org-title > .image-container {
     padding-left: 14px;
     float: left;
     margin-right: 18px;
@@ -183,17 +196,8 @@ h1, h2 {
     top: 0;
     padding-top: 16px;
     position: fixed;
-    /* top: 0; */
-    background-color: white;
-    /* right: 0; */
   }
   
-  .menu-options.needs-border {
-    /* border-bottom: 1px solid lightgray;
-    border-left: 1px solid lightgray; */
-    box-shadow: 0 0 5px lightgray;
-  }
-
   .nav-item {
     float: left;
     padding: 9px 18px 6px 18px;
@@ -217,11 +221,19 @@ h1, h2 {
   }
 
   .main-content {
-    /* padding-left: 564px;
-    padding-right: 564px; */
     margin-left: auto;
     margin-right: auto;
     max-width: 99%;
+  }
+
+  .main-content-spacer {
+    min-height: 208px;
+  }
+
+  .menu-title > span {
+    margin-top: -208px;
+    padding-bottom: 208px;
+    display: block;
   }
 
   .menu-title,
