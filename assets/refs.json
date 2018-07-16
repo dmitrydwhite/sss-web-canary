@@ -1,0 +1,23 @@
+{
+  "vision": {
+    "primary": {
+      "base": {
+        "path": "./assets/vision/warming-shelter/primary.png",
+        "width": 380,
+        "height": 405
+      }
+    },
+    "secondary": [
+      {
+        "path": "./assets/vision/warming-shelter/second-one.png",
+        "width": 607,
+        "height": 405
+      },
+      {
+        "path": "./assets/vision/warming-shelter/second-two.png",
+        "width": 261,
+        "height": 405
+      }
+    ]
+  }
+}
