@@ -148,7 +148,7 @@ h1, h2 {
   .top-container {
     margin-top: 8px;
     height: 215px;
-    border-bottom: 1px solid rgb(27, 69, 83);
+    /*border-bottom: 1px solid rgb(27, 69, 83);*/
   }
 
   .heading-container {
@@ -158,14 +158,14 @@ h1, h2 {
   }
 
   h1, h2 {
-    color: rgb(27, 69, 83);
-    padding: 0;
+    /*color: rgb(27, 69, 83);*/
+    padding: 48px 0 0 0;
     margin: 0;
   }
 
   h2 {
-    font-style: italic;
-    font-size: 18px;
+    /*font-style: italic;*/
+    font-size: 14px;
   }
 
   .org-title > img {
