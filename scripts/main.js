@@ -52,32 +52,42 @@
       document.getElementById('follower').style.height = '' + diffHeight + 'px';
     }
 
-    /**
-     * Temporary function to show "Coming Soon" text when user clicks on "Donate" button.
-     * @param  {Object} evt The click event
-     * @return {Undefined}
-     */
-    function showComingSoonText(evt) {
-      var comingSoonText = 'Coming Soon!';
-      var donateText = 'Donate';
-      var buttonEl = evt.target;
+    function extractHashFromEvt(event) {
+      var oldURL = event && event.oldURL;
+      var hashFound = /#\w*$/.exec(oldURL);
 
-      buttonEl.innerHTML = comingSoonText;
+      return (hashFound && hashFound[0]) || hashBeforeDonate;
+    }
 
-      setTimeout(function () {
-        buttonEl.innerHTML = donateText;
-      }, 3000);
+    function showDonateModal(evt) {
+      hashBeforeDonate = extractHashFromEvt(evt);
+      document.getElementById('donate-modal').classList.remove('nosho');
+    }
+
+    function hideDonateModal() {
+      document.getElementById('donate-modal').classList.add('nosho');
+      if (window.location.hash === '#donate') window.location.hash = hashBeforeDonate;
+    }
+
+    function directDonateNav(evt) {
+      if (window.location.hash === '#donate') {
+        showDonateModal(evt);
+      } else {
+        hideDonateModal();
+      }
     }
 
     var listItems = Array.prototype.slice.call(document.getElementsByClassName('nav-item'));
     var mobileMenu = document.getElementById('sticky-mobile');
     var desktopMenu = document.getElementById('sticky-desktop');
     var docBody = document.getElementsByTagName('html')[0];
-    var donateBtn = document.getElementsByClassName('donate')[0];
+    var hashBeforeDonate = '#';
 
     document.getElementById('menu-open').addEventListener('click', openMenu);
     document.getElementById('menu-clox').addEventListener('click', closeMenu);
+    document.getElementById('donate-clox').addEventListener('click', hideDonateModal);
     window.addEventListener('scroll', toggleStickyMenuBorder);
-    donateBtn.addEventListener('click', showComingSoonText);
+    window.addEventListener('load', directDonateNav);
+    window.addEventListener('hashchange', directDonateNav);
     addFollower();
   })();

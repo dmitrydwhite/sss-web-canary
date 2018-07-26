@@ -10,8 +10,13 @@ body {
   margin: 0;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Quicksand', sans-serif;;
+}
+
+.donate-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
 }
 
 .menu-options > ul {
@@ -21,6 +26,24 @@ h1, h2 {
 
 .nosho {
   display: none;
+}
+
+#donate-clox {
+  text-align: right;
+  padding-right: 8px;
+  padding-top: 8px;
+  cursor: pointer;
+}
+
+.donate-title {
+  text-align: center;
+}
+
+.paypal-btn-container {
+  text-align: center;
+  padding-left: 36px;
+  padding-right: 36px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .nav-item.hold {
@@ -60,6 +83,11 @@ h1, h2 {
 
 /* Mobile Styling */
 @media only screen and (max-width: 999px) {
+  .mobile-nav-assist {
+    height: 200px;
+    margin-top: -200px;
+  }
+
   .org-title {
     text-align: center;
     margin-top: 50px;
@@ -125,6 +153,11 @@ h1, h2 {
     display: none;
   }
 
+  #donate-modal {
+    border-top: 8px solid orange;
+    border-bottom: 8px solid orange;
+  }
+
   .main-content {
     margin-left: 16px;
     margin-right: 16px;
@@ -158,6 +191,10 @@ h1, h2 {
 
 /* Desktop Styling */
 @media only screen and (min-width: 1000px) {
+  .mobile-nav-assist {
+    display: none;
+  }
+
   .top-container {
     top: 0;
     height: 185px;
@@ -228,6 +265,17 @@ h1, h2 {
     background-color: #D34345;
     color: white;
     text-decoration: none;
+  }
+
+  #donate-modal {
+    position: fixed;
+    right: 14px;
+    top: 74px;
+    width: 600px;
+    z-index: 100;
+    background-color: white;
+    height: 280px;
+    border: 1px solid lightgrey;
   }
 
   .main-content {
