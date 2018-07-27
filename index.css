@@ -83,6 +83,10 @@ h1, h2, h3 {
 
 /* Mobile Styling */
 @media only screen and (max-width: 999px) {
+  body.noscroll {
+    overflow: hidden;
+  }
+
   .mobile-nav-assist {
     height: 200px;
     margin-top: -200px;

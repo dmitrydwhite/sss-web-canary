@@ -77,6 +77,11 @@
       }
     }
 
+    function showMaskForMobile() {
+      document.getElementsByTagName('body')[0].classList.add('noscroll');
+      document.getElementsByClassName('loading-mask')[0].classList.remove('nosho');
+    }
+
     var listItems = Array.prototype.slice.call(document.getElementsByClassName('nav-item'));
     var mobileMenu = document.getElementById('sticky-mobile');
     var desktopMenu = document.getElementById('sticky-desktop');
@@ -86,6 +91,7 @@
     document.getElementById('menu-open').addEventListener('click', openMenu);
     document.getElementById('menu-clox').addEventListener('click', closeMenu);
     document.getElementById('donate-clox').addEventListener('click', hideDonateModal);
+    document.getElementById('paypal-form').addEventListener('submit', showMaskForMobile);
     window.addEventListener('scroll', toggleStickyMenuBorder);
     window.addEventListener('load', directDonateNav);
     window.addEventListener('hashchange', directDonateNav);
