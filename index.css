@@ -81,6 +81,16 @@ h1, h2, h3 {
   font-size: 18px;
 }
 
+.fb-linker {
+  text-decoration: none;
+  color: black;
+}
+
+.fb-linker:visited {
+  text-decoration: none;
+  color: black;
+}
+
 /* Mobile Styling */
 @media only screen and (max-width: 999px) {
   body.noscroll {
