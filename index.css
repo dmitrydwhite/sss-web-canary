@@ -93,6 +93,12 @@ h1, h2, h3 {
   color: black;
 }
 
+.coc-pad {
+  z-index: -1;
+  margin-top: 108px;
+  font-family: 'Quicksand', sans-serif;
+}
+
 /* Mobile Styling */
 @media only screen and (max-width: 999px) {
   body.noscroll {
@@ -206,6 +212,10 @@ h1, h2, h3 {
 
   .desktop-only-br {
     display: none;
+  }
+
+  .coc-pad {
+    margin-top: 108px;
   }
 }
 
