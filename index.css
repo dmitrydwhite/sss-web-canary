@@ -289,7 +289,7 @@ h1, h2, h3 {
 
   .top-container {
     top: 0;
-    height: 200px;
+    height: 242px;
     overflow:hidden;
     position: fixed;
     background-color: white;
@@ -320,12 +320,13 @@ h1, h2, h3 {
   }
 
   .heading-container {
-    float:left;
-    margin-top: 80px;
+    /*float:left;*/
+    /*margin-top: 80px;*/
   }
 
   h1, h2 {
-    padding: 48px 0 0 0;
+    /*padding: 48px 0 0 0;*/
+    padding: 0 22px;
     margin: 0;
   }
 
@@ -335,7 +336,7 @@ h1, h2, h3 {
 
   .org-title > .image-container {
     padding-left: 14px;
-    float: left;
+    /*float: left;*/
     margin-right: 18px;
   }
 
@@ -393,7 +394,7 @@ h1, h2, h3 {
   }
 
   .main-content-spacer {
-    min-height: 208px;
+    min-height: 242px;
   }
 
   .menu-title > span {
