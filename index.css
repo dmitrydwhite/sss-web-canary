@@ -83,6 +83,34 @@ h1, h2, h3 {
   font-size: 18px;
 }
 
+.triptych-container {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.triptych-header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 16px;
+  margin-top: 8px;
+}
+
+.triptych-panel {
+  width: 33%;
+  float: left;
+  text-align: center;
+}
+
+.triptych-main-image-container {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.triptych-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
 .fb-linker {
   text-decoration: none;
   color: black;
@@ -208,6 +236,40 @@ h1, h2, h3 {
 
   img.new-image {
     opacity: 0;
+  }
+
+  /*.triptych-panel {
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 2px;
+  }*/
+
+  .triptych-main-image-container {
+    min-height: 80px;
+  }
+
+  .triptych-main-image-container.day-center {
+    background-image: url('./assets/SSS_Logo_HS_80.png');
+  }
+
+  .triptych-main-image-container.warming-shelter {
+    background-image: url('./assets/SSS_Icon_WS_80.png');
+  }
+
+  .triptych-main-image-container.transitional-housing {
+    background-image: url('./assets/SSS_Icon_TH_80.png');
+  }
+
+  .triptych-title {
+    min-height: 48px;
+  }
+
+  .triptych-verbose-info {
+    display: none;
+  }
+
+  .triptych-min-info {
+    text-transform: capitalize;
   }
 
   .desktop-only-br {
@@ -356,5 +418,42 @@ h1, h2, h3 {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position-y: -82px;
+  }
+
+  .triptych-container {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  .triptych-header {
+    margin-top: 42px;
+  }
+
+  .triptych-title {
+    font-size: 24px;
+    font-weight: 900;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .triptych-main-image-container {
+    min-height: 200px;
+  }
+
+  .triptych-main-image-container.day-center {
+    background-image: url('./assets/SSS_Icon_DC_200.png');
+  }
+
+  .triptych-main-image-container.warming-shelter {
+    background-image: url('./assets/SSS_Icon_WS_200.png');
+  }
+
+  .triptych-main-image-container.transitional-housing {
+    background-image: url('./assets/SSS_Icon_TH_200.png');
+  }
+
+  .triptych-info {
+    margin-left: 15%;
+    margin-right: 15%;
   }
 }
