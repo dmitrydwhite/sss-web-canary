@@ -299,7 +299,6 @@ a.triptych-link:visited {
 
   .top-container {
     top: 0;
-    height: 242px;
     overflow:hidden;
     position: fixed;
     background-color: white;
@@ -307,6 +306,7 @@ a.triptych-link:visited {
   }
 
   .top-container > .org-title {
+    text-align: center;
     opacity: 1;
     transition: opacity 0.8s ease-in;
   }
@@ -323,19 +323,23 @@ a.triptych-link:visited {
     transition: opacity 0s;
   }
 
+  .top-container.needs-border .image-container {
+    display: none;
+  }
+
   .top-container.needs-border .small-home-icon {
-    display: inline-block;
+    float: left;
+    display: block;
     margin-top: 10px;
     margin-left: 20px;
   }
 
-  .heading-container {
-    /*float:left;*/
-    /*margin-top: 80px;*/
+  .top-container.needs-border .menu-options {
+    float: left;
+    padding-top: 22px;
   }
 
   h1, h2 {
-    /*padding: 48px 0 0 0;*/
     padding: 0 22px;
     margin: 0;
   }
@@ -346,7 +350,6 @@ a.triptych-link:visited {
 
   .org-title > .image-container {
     padding-left: 14px;
-    /*float: left;*/
     margin-right: 18px;
   }
 
@@ -355,24 +358,28 @@ a.triptych-link:visited {
   }
 
   .menu-options {
-    right: 18px;
-    top: 0;
-    padding-top: 16px;
-    position: fixed;
+    text-align: center;
+  }
+
+  .menu-items {
+    padding: 0;
   }
   
   .nav-item {
-    float: left;
     padding: 9px 18px 6px 18px;
+    display: inline;
+    max-width: 202px;
   }
 
   .nav-item.donate {
     background-color: #B24345;
     color: white;
     border-radius: 20px;
-    /* TEMPORARY -- Accommodate "Coming Soon" text for now */
     text-align: center;
-    min-width: 132px; 
+    width: 132px;
+    position: absolute;
+    top: 28px;
+    right: 28px;
   }
 
   .nav-item:hover {
