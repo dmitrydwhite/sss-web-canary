@@ -176,7 +176,7 @@ function renderPaypalBtn() {
   // Render the PayPal button
   paypal.Button.render({
     // Set your environment
-    env: 'sandbox', // sandbox | production
+    env: 'production', // sandbox | production
     // Specify the style of the button
     style: {
       layout: 'horizontal',  // horizontal | vertical
@@ -191,8 +191,7 @@ function renderPaypalBtn() {
       disallowed: []
     },
     client: {
-      sandbox: 'AUHi5ijmZQI76_jMqlkpDSGgLWCq_4g8CQn1K7FMDjyW_NP8YmD3DHiV3_oY2nHBwjoruMKPnN054pZo',
-      // production: ''
+      production: 'AY0Qmeao4Q7kSd4LW0p1x3S1elMUGl5ybimDyHb2WjNjQjvydohx5xRHDpWxHtbZGzG8_tbWg7ak5g9H'
     },
     commit: true,
 
