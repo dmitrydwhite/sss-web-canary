@@ -92,6 +92,16 @@ a.triptych-link:visited {
   text-decoration: none;
 }
 
+a.triptych-link {
+  color: black;
+  text-decoration: none;
+}
+
+a.triptych-link:visited {
+  color: black;
+  text-decoration: none;
+}
+
 .donate-title {
   font-family: 'Quicksand', sans-serif;
   font-size: 18px;
