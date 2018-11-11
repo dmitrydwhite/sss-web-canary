@@ -160,9 +160,12 @@ function closeLtcDonateModal(completed) {
 }
 
 function getDescription() {
+  var nightsSelect = document.getElementById('js-night-select');
+  var bedText = nightsSelect && parseInt(nightsSelect.value, 10) > 1 ? 'beds' : 'bed';
+
   switch (kind) {
     case 'beds':
-      return 'Thank you for sponsoring ' + getDonationTotal() / 10 + ' nights at the Warming Shelter';
+      return 'Thank you for sponsoring ' + nightsSelect.value + ' ' + bedText + ' at the Warming Shelter';
     case 'week':
       return 'Thank you for sponsoring one guest for a week at the Warming Shelter';
     case 'fullnight':
