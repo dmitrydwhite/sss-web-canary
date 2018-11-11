@@ -152,6 +152,16 @@ a.triptych-link:visited {
   text-decoration: none;
 }
 
+.ltc-calendar-donation-mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.4;
+}
+
 .menu-title {
   font-family: 'Quicksand', sans-serif;
   font-size: 24px;
@@ -303,6 +313,18 @@ a.triptych-link:visited {
   .main-content {
     margin-left: 16px;
     margin-right: 16px;
+  }
+
+  .ltc-calendar-donation-modal {
+    position: fixed;
+    opacity: initial;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    min-height: 100%;
+    padding: 32px;
+    font-family: 'Quicksand', sans-serif;
   }
 
   .menu-title {
@@ -522,16 +544,6 @@ a.triptych-link:visited {
 
   .main-content-spacer {
     min-height: 290px;
-  }
-
-  .ltc-calendar-donation-mask {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: black;
-    opacity: 0.4;
   }
 
   .ltc-calendar-donation-modal {

@@ -6,6 +6,7 @@ input.ltc-beds-number:disabled {
   font-size: 16px;
   text-align: center;
   color: black;
+  background-color: white;
 }
 
 
@@ -56,4 +57,26 @@ input.ltc-beds-number:disabled {
   max-width: 82px;
   padding-left: 8px;
   cursor: default;
+}
+
+/* Mobile Styling */
+@media only screen and (max-width: 999px) {
+  .ltc-donate-type-container {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+
+  .ltc-beds-amount-input,
+  .ltc-paypal-button-container,
+  .ltc-form-input-container {
+    width: 100%;
+    float: none;
+  }
+
+  #js-night-select {
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid gray;
+  }
 }
