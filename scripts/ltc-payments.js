@@ -191,7 +191,7 @@ function renderPaypalBtn() {
       disallowed: []
     },
     client: {
-      production: 'AY0Qmeao4Q7kSd4LW0p1x3S1elMUGl5ybimDyHb2WjNjQjvydohx5xRHDpWxHtbZGzG8_tbWg7ak5g9H'
+      production: 'AWxPxieXgeYj2LSZZdbdULs3PUS1lWI6O729X1oxMo-GfCzrUrhVkG6mximid52S7s2MJVBCxsLzetFI'
     },
     commit: true,
 
