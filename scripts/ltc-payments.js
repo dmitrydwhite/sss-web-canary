@@ -118,12 +118,6 @@ function saveSponsorMessage(evt) {
     if (i < submitFields.length - 1) { query += '&'; }
   }
 
-  // Poster.onreadystatechange = function() {
-  //   if (this.readyState === XMLHttpRequest.DONE) {
-  //     if (this.status === 200) { volunteerFormSuccess(); }
-  //     else { volunteerFormFailure(); }
-  //   }
-  // };
   Poster.open('GET', baseUrl + query);
   Poster.send();
 }
@@ -152,8 +146,11 @@ function openLtcDonateModal(evt) {
   renderPaypalBtn();
 }
 
-function closeLtcDonateModal() {
-  document.getElementById('ltc-info-form').dispatchEvent(new Event('submit'));
+function closeLtcDonateModal(completed) {
+  if (completed === true) {
+    document.getElementById('ltc-info-form').dispatchEvent(new Event('submit'));
+  }
+
   document.getElementsByTagName('body')[0].classList.remove('noscroll');
   document.getElementById('ltc-dynamic-content').innerHTML = '';
 
@@ -217,7 +214,9 @@ function renderPaypalBtn() {
 
     onAuthorize: function (data, actions) {
       return actions.payment.execute()
-        .then(closeLtcDonateModal);
+        .then(function() {
+          closeLtcDonateModal(true);
+        });
     }
   }, '#ltc-paypal-button');
 }
