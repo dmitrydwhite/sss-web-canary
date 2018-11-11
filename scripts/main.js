@@ -97,11 +97,13 @@
       var Poster = new XMLHttpRequest();
       var baseUrl = 'https://script.google.com/macros/s/AKfycbwHrqzJsmotLz3yPp4J69fHQbAFYOi_1xq-vtDuMksjbGQSGLnF/exec';
       var query = '?';
-      var fields = ['firstName', 'lastName', 'emailAddress', 'phoneNumber'];
+      var fields = ['firstName', 'lastName', 'emailAddress', 'phoneNumber', 'isVolunteer'];
+
+      formData.isVolunteer = true;
 
       for (var i=0; i<fields.length; i++) {
         query += fields[i] + '=' + encodeURIComponent(formData[fields[i]]);
-        if (i < 3) { query += '&'; }
+        if (i < fields.length - 1) { query += '&'; }
       }
 
       Poster.onreadystatechange = function() {

@@ -5,6 +5,7 @@ var modalElements = [
   document.getElementsByClassName('ltc-modal-container')[0],
 ];
 var nightsSponsored = 1;
+var kind;
 
 var bedsMarkup = '' +
 '<div class="ltc-donate-type-container">' +
@@ -38,7 +39,7 @@ var bedsMarkup = '' +
 '<div style="clear:both;"></div>' +
 '';
 
-var nightMarkup = '' +
+var weekMarkup = '' +
 '<div class="ltc-donate-type-container">' +
   '<p>' +
     'Yes! I would like to sponsor one person for a week at the Silverton Area Warming Shelter.' +
@@ -46,7 +47,7 @@ var nightMarkup = '' +
 '</div>' +
 '<div class="ltc-beds-amount-input">' +
   '<p>' +
-    '$<input disabled type="number" class="ltc-beds-number" value=50>' +
+    '$<input disabled id="ltcTotalDonationAmount" type="number" class="ltc-beds-number" value=50>' +
   '</p>' +
 '</div>' +
 '<div class="ltc-paypal-button-container">' +
@@ -56,7 +57,7 @@ var nightMarkup = '' +
 '<div style="clear:both;"></div>' +
 '';
 
-var weekMarkup = '' +
+var fullnightMarkup = '' +
 '<div class="ltc-donate-type-container">' +
   '<p>' +
     'Yes! I would like to sponsor one full night of shelter for all at the Silverton Area Warming Shelter.' +
@@ -64,7 +65,7 @@ var weekMarkup = '' +
 '</div>' +
 '<div class="ltc-beds-amount-input">' +
   '<p>' +
-    '$<input disabled type="number" class="ltc-beds-number" value=250>' +
+    '$<input disabled id="ltcTotalDonationAmount" type="number" class="ltc-beds-number" value=250>' +
   '</p>' +
 '</div>' +
 '<div class="ltc-paypal-button-container">' +
@@ -76,8 +77,8 @@ var weekMarkup = '' +
 
 var populate = {
   beds: bedsMarkup,
-  night: nightMarkup,
-  week: weekMarkup
+  week: weekMarkup,
+  fullnight: fullnightMarkup
 };
 
 
@@ -97,9 +98,40 @@ function setBedsValue(evt) {
   bedAmountInput.value = newValue * 10;
 }
 
+function saveSponsorMessage(evt) {
+  evt.preventDefault();
+
+  var Poster = new XMLHttpRequest();
+  var baseUrl = 'https://script.google.com/macros/s/AKfycbwHrqzJsmotLz3yPp4J69fHQbAFYOi_1xq-vtDuMksjbGQSGLnF/exec';
+  var nightsSelect = document.getElementById('js-night-select');
+  var submitFields = ['firstName', 'lastName', 'sponsorMessage']
+  var query = '?isCalendarDonor=true&calendarDonorType=' + encodeURIComponent(kind) + '&';
+
+  if (nightsSelect) {
+    query += 'quantity=' + encodeURIComponent(nightsSelect.value) + '&';
+  } else {
+    query += 'quantity=1&';
+  }
+
+  for (let i = 0; i < submitFields.length; i++) {
+    query += (submitFields[i] + '=' + encodeURIComponent(evt.target[submitFields[i]].value));
+    if (i < submitFields.length - 1) { query += '&'; }
+  }
+
+  // Poster.onreadystatechange = function() {
+  //   if (this.readyState === XMLHttpRequest.DONE) {
+  //     if (this.status === 200) { volunteerFormSuccess(); }
+  //     else { volunteerFormFailure(); }
+  //   }
+  // };
+  Poster.open('GET', baseUrl + query);
+  Poster.send();
+}
+
 function openLtcDonateModal(evt) {
-  var kind = evt.target.getAttribute('data-donate-type');
   var nightsSelect = null;
+
+  kind = evt.target.getAttribute('data-donate-type');
 
   document.getElementsByTagName('body')[0].classList.add('noscroll');
 
@@ -115,17 +147,32 @@ function openLtcDonateModal(evt) {
     nightsSelect.addEventListener('change', setBedsValue);
   }
 
+  document.getElementById('ltc-info-form').addEventListener('submit', saveSponsorMessage);
   document.getElementById('ltc-cancel-btn').addEventListener('click', closeLtcDonateModal);
   renderPaypalBtn();
 }
 
 function closeLtcDonateModal() {
+  document.getElementById('ltc-info-form').dispatchEvent(new Event('submit'));
   document.getElementsByTagName('body')[0].classList.remove('noscroll');
   document.getElementById('ltc-dynamic-content').innerHTML = '';
 
   modalElements.forEach(function(elem) {
     elem.classList.add('nosho');
   });
+}
+
+function getDescription() {
+  switch (kind) {
+    case 'beds':
+      return 'Thank you for sponsoring ' + getDonationTotal() / 10 + ' nights at the Warming Shelter';
+    case 'week':
+      return 'Thank you for sponsoring one guest for a week at the Warming Shelter';
+    case 'fullnight':
+      return 'Thank you for sponsoring all guests for one full night at the Warming Shelter';
+    default:
+      return 'Thank you for your support of the Silverton Area Warming Shelter';
+  }
 }
 
 function renderPaypalBtn() {
@@ -161,7 +208,7 @@ function renderPaypalBtn() {
                 total: getDonationTotal(),
                 currency: 'USD'
               },
-              description: 'Thank you for sponsoring ' + getDonationTotal() / 10 + ' nights at the Warming Shelter'
+              description: getDescription(),
             }
           ],
         }
