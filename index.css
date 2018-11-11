@@ -348,9 +348,36 @@ a.triptych-link:visited {
     background-image: url('./assets/SSS_Icon_TH_80.png');
   }
 
+  /* Here are the different triptych styles for the take-action page */
+  .triptych-panel.full-width {
+    width: 100%;
+    margin-bottom: 16px;
+    border-bottom: 1px solid gray;
+  }
+
+  form#ws-volunteer-form {
+    margin-bottom: 8px;
+  }
+
+  div.triptych-min-info.lantern-parade-info {
+    margin-bottom: 32px;
+    line-height: 2.75em;
+  }
+
   /* Here are the triptych bg images for the mobile take-action page */
+  .triptych-main-image-container.light-the-calendar {
+    background-image: url('./assets/SSS_Image_LTC_160.png');
+    min-height: 160px;
+  }
+
   .triptych-main-image-container.ws-volunteer {
-    background-image: url('./assets/SSS_Volunteer_200.png');
+    background-image: url('./assets/SSS_Image_Volunteer_160.png');
+    min-height: 160px;
+  }
+
+  .triptych-main-image-container.lantern-parade {
+    background-image: url('./assets/SSS_Image_Lantern_Parade_160.png');
+    min-height: 160px;
   }
 
   .triptych-title {
