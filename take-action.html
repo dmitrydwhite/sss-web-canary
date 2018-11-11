@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="google-site-verification" content="b5B7f5A3afGxk49yZLO-lWVESIn-5qkOYM8JDIaJ4F0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand|Hind" rel="stylesheet">
+  <title>Take Action | Silverton Sheltering Services</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="ltc-camp.css">
+  <link rel="stylesheet" href="./assets/loader/loader.css">
+</head>
+<body>
+  <div class="top-container" id="sticky-desktop" aria-roledescription="navigation">
+    <div id="donate" class="mobile-nav-assist"></div>
+    <div class="menu-opener" id="sticky-mobile">
+      <i id="menu-open" class="material-icons">menu</i>
+      <i id="menu-clox" class="material-icons nosho">close</i>
+    </div>
+    <a href="#" class="small-home-icon">
+      <img class="small-home-icon-img" src="./assets/SSS_Logo_HS_80.png" alt="Silverton Sheltering Services"/>
+    </a>
+    <div class="org-title">
+      <div class="image-container">
+        <a href="./index.html">
+          <img src="./assets/SSS_Logo_HS_400.png" alt="Silverton Sheltering Services"/>
+        </a>
+      </div>
+      <div class="heading-container nosho">
+        <h1 style="display: none;">Silverton Sheltering Services</h1>
+        <h2>
+          A Collaborative Community Response to Homelessness
+        </h2>
+      </div>
+    </div>
+    <div class="menu-options">
+      <ul class="menu-items">
+        <li class="nav-item"><a href="./index.html#mission">Mission</a></li>
+        <li class="nav-item not-mobile"><a href="#">Take Action</a></li>
+        <li class="nav-item"><a href="./programs.html">Programs</a></li>
+        <li class="nav-item hold"><a href="./partners.html">Partners</a></li>
+        <li class="nav-item hold">Volunteer</li>
+        <li class="nav-item"><a href="./index.html#contact">Contact</a></li>
+        <li class="nav-item donate"><a href="#donate">Donate</a></li>
+        <li class="nav-item search hold"><i class="material-icons">search</i></li>
+      </ul>
+    </div>
+  </div>
+  <div id="donate-modal" class="nosho">
+    <div class="loading-mask nosho">
+      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+      <p class="paypal-loading-msg">TAKING YOU TO PAYPAL</p>
+    </div>
+    <div id="donate-clox"><i class="material-icons">close</i></div>
+    <div class="donate-title">
+      <h3>Donate to Silverton Sheltering Services</h3>
+    </div>
+    <div class="paypal-btn-container">
+      <p class="donate-msg">
+        Your contribution allows us to continue our work caring for our unhoused neighbors.  Thank you!
+      </p>
+      <form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="FP2Z8RZETEURE">
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+      </form>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <div class="ltc-calendar-donation-mask nosho">
+    </div>
+    <div class="ltc-modal-container nosho">
+    <div class="ltc-calendar-donation-modal nosho">
+      <div class="ltc-info">
+          <div class="ltc-donate-frame">
+            <div id="ltc-dynamic-content">
+
+            </div>
+            <div class="ltc-info-form-container">
+              <form action="" id="ltc-info-form">
+                <div class="ltc-form-name-row">
+                  <div class="ltc-form-input-container">
+                    <input
+                      type="text"
+                      name="firstName"
+                      class="volunteer-form first-name"
+                      placeholder="First Name"
+                    />
+                  </div>
+                  <div class="ltc-form-input-container">
+                    <input
+                      type="text"
+                      name="lastName"
+                      class="volunteer-form last-name"
+                      placeholder="Last Name"
+                    />
+                  </div>
+                  <div style="clear:both;"></div>
+                </div>
+                <div class="ltc-form-message-row">
+                  <!-- <label for="sponsor-message">Add a Message to Your Donation</label> -->
+                  <textarea
+                    class="volunteer-form"
+                    name="sponsor-message"
+                    id="sponsor-message"
+                    placeholder="Add a message that will be displayed with your donation"
+                  ></textarea>
+                </div>
+              </form>
+            </div>
+            <div id="ltc-cancel-btn" role="button">
+              <span class="ltc-cancel-btn-x">
+                X
+              </span>
+              Cancel
+            </div>
+          </div>
+
+      </div>
+    </div>
+    </div>
+    <div class="main-content-spacer"></div>
+    <div class="triptych-container">
+      <div class="triptych-header">
+        <!-- Spacer & Placeholder for Title if Desired -->
+        Upcoming Programs and Events
+      </div>
+
+      <div class="triptych-panel">
+        <div
+          class="triptych-main-image-container light-the-calendar"
+          role="img"
+          aria-label="Day Center: Support the Unsheltered"
+        ></div>
+        <div class="triptych-title">I would like to Light the Calendar:</div>
+        <div class="triptych-info">
+          <div class="ltc-donate bed" data-donate-type="beds">A Bed for a Night<br>$10</div>
+          <div class="ltc-donate week" data-donate-type="night">One Person for a Week<br>$50</div>
+          <div class="ltc-donate night" data-donate-type="week">A Full Night of Shelter for All<br>$250</div>
+        </div>
+      </div>
+
+      <div class="triptych-panel">
+        <div class="triptych-title">Volunteer at the Warming Shelter</div>
+        <div
+          class="triptych-main-image-container ws-volunteer"
+          role="img"
+          aria-label="Volunteer: Many hands make light work"
+        ></div>
+        <div class="triptych-info">
+          <span class="triptych-verbose-info">
+              If you would like to volunteer at the Silverton Area Warming Shelter providing hospitality, a hot meal and a warm bed to our neighbors who are homeless, please fill out the form below, or
+              <a href="https://www.facebook.com/events/315419702591869/" target="blank">
+                sign up for an upcoming volunteer orientation on Facebook
+              </a>
+          </span>
+          <form id="ws-volunteer-form" method="get" action="http://local.dmitry.com:3000/volunteer">
+            <div id="ws-volunteer-form--error" class="triptych-info nosho">
+            </div>
+            <input class="volunteer-form" name="firstName" type="name" placeholder="First Name">
+            <input class="volunteer-form" name="lastName" type="name" placeholder="Last Name">
+            <input class="volunteer-form" name="emailAddress" type="email" placeholder="example@youremail.com">
+            <input class="volunteer-form" name="phoneNumber" type="tel" placeholder="503-555-1234">
+            <button id="volunteer" type="submit">Volunteer</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="triptych-panel">
+        <div
+          class="triptych-main-image-container lantern-parade"
+          role="img"
+          aria-label="Child holding a glowing lantern in winter"
+        ></div>
+        <div class="triptych-title">First Annual<br>Silverton Children's<br>Lantern Parade</div>
+        <div class="triptych-info">
+          <span class="triptych-verbose-info">
+            A new holiday tradition for the town that still believes. Please join us in spreading joy and light on the First Friday in December before the Christmas Tree Lighting. Everyone is welcome!
+          </span>
+        </div>
+        <div class="triptych-verbose-info">
+          <span class="triptych-verbose-info">
+            For more information, contact
+            <br>
+            <a href="mailto:michele@shelteringsilverton.org">michele@shelteringsilverton.org</a>
+            <br>
+            or go to
+            <a href="https://www.facebook.com/events/2177885962427929/" target="blank">our Facebook page</a>
+            .
+          </span>
+        </div>
+      </div>
+
+      <div style="clear: both;"></div>
+    </div>
+
+    <!-- Here's some mumbo jumbo to give the page some trailing space -->
+    <div class="last"></div>
+    <p>&nbsp;</p>
+    <div id="follower"></div>
+  </div>
+  <script src="./scripts/main.js"></script>
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  <script src="./scripts/ltc-payments.js"></script>
+</body>
+</html>

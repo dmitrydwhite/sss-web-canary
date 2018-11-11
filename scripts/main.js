@@ -38,6 +38,9 @@
 
     function addFollower() {
       var lastTitle = document.getElementById('last');
+
+      if (!lastTitle) return;
+
       var nextP = lastTitle.nextElementSibling;
       var currHeight = lastTitle.clientHeight;
       var diffHeight;
@@ -82,6 +85,82 @@
       document.getElementsByClassName('loading-mask')[0].classList.remove('nosho');
     }
 
+    function volunteerFormFailure() {
+      alert('We had some trouble gathering your info (our fault).  Please try again later.');
+    }
+
+    function volunteerFormSuccess() {
+      alert('Your information has been received -- Thank You!');
+    }
+
+    function doSubmit(formData) {
+      var Poster = new XMLHttpRequest();
+      var baseUrl = 'https://script.google.com/macros/s/AKfycbwHrqzJsmotLz3yPp4J69fHQbAFYOi_1xq-vtDuMksjbGQSGLnF/exec';
+      var query = '?';
+      var fields = ['firstName', 'lastName', 'emailAddress', 'phoneNumber'];
+
+      for (var i=0; i<fields.length; i++) {
+        query += fields[i] + '=' + encodeURIComponent(formData[fields[i]]);
+        if (i < 3) { query += '&'; }
+      }
+
+      Poster.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE) {
+          if (this.status === 200) { volunteerFormSuccess(); }
+          else { volunteerFormFailure(); }
+        }
+      };
+      Poster.open('GET', baseUrl + query);
+      Poster.send();
+    }
+
+    function doFormError(formData) {
+      var errorDisplay = document.getElementById('ws-volunteer-form--error');
+      var messages = [];
+
+      if (!(formData.firstName && formData.lastName)) {
+        messages.push('<div class="triptych-error">⚠️ Both first and last name are required</div>');
+      }
+
+      if (!formData.emailAddress || !formData.phoneNumber) {
+        messages.push('<div class="triptych-error">⚠️ Please provide either a phone number or email address to contact you</div>');
+      }
+
+      errorDisplay.classList.remove('nosho');
+      errorDisplay.innerHTML = messages.join('');
+
+      document.getElementById('ws-volunteer-form').addEventListener('focusin', function () {
+        errorDisplay.classList.add('nosho');
+      });
+    }
+
+    function handleVolunteerFormSubmit(evt) {
+      evt.preventDefault();
+
+      var formFields = ['firstName', 'lastName', 'emailAddress', 'phoneNumber'];
+      var formVals = {};
+
+      formFields.forEach(function (fieldName) {
+        formVals[fieldName] = evt.target[fieldName] && evt.target[fieldName].value;
+      });
+
+      if (
+        formVals.firstName &&
+        formVals.lastName &&
+        (formVals.emailAddress || formVals.phoneNumber)
+      ) {
+        doSubmit(formVals);
+      } else {
+        doFormError(formVals);
+      }
+    }
+
+    function addFormHandlers() {
+      var volunteerForm = document.getElementById('ws-volunteer-form');
+
+      if (volunteerForm) { volunteerForm.addEventListener('submit', handleVolunteerFormSubmit); }
+    }
+
     var listItems = Array.prototype.slice.call(document.getElementsByClassName('nav-item'));
     var mobileMenu = document.getElementById('sticky-mobile');
     var desktopMenu = document.getElementById('sticky-desktop');
@@ -95,5 +174,6 @@
     window.addEventListener('scroll', toggleStickyMenuBorder);
     window.addEventListener('load', directDonateNav);
     window.addEventListener('hashchange', directDonateNav);
+    addFormHandlers();
     addFollower();
   })();
