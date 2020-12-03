@@ -7,7 +7,7 @@
   <meta name="google-site-verification" content="b5B7f5A3afGxk49yZLO-lWVESIn-5qkOYM8JDIaJ4F0" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand|Hind" rel="stylesheet">
-  <title>Partners | Sheltering Silverton</title>
+  <title>Sheltering Silverton</title>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="./assets/loader/loader.css">
 </head>
@@ -23,7 +23,7 @@
     </a>
     <div class="org-title">
       <div class="image-container">
-        <a href="./index.html">
+        <a href="#">
           <img src="./assets/SSS_Logo_CT_400.png" alt="Sheltering Silverton"/>
         </a>
       </div>
@@ -39,9 +39,9 @@
         <li class="nav-item"><a href="./index.html#mission">Mission</a></li>
         <li class="nav-item"><a href="./support.html">Take Action</a></li>
         <li class="nav-item"><a href="./programs.html">Programs</a></li>
-        <li class="nav-item"><a href="#">Partners</a></li>
+        <li class="nav-item hold"><a href="./partners.html">Partners</a></li>
         <li class="nav-item hold">Volunteer</li>
-        <li class="nav-item"><a href="./index.html#contact">Contact</a></li>
+        <li class="nav-item"><a href="index.html#contact">Contact</a></li>
         <li class="nav-item donate"><a href="#donate">Donate</a></li>
         <li class="nav-item search hold"><i class="material-icons">search</i></li>
       </ul>
@@ -61,25 +61,40 @@
         Your contribution allows us to continue our work caring for our unhoused neighbors.  Thank you!
       </p>
       <form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-      <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="FP2Z8RZETEURE">
-      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        <input type="hidden" name="cmd" value="_s-xclick" />
+        <input type="hidden" name="hosted_button_id" value="FP2Z8RZETEURE" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
       </form>
     </div>
   </div>
-
   <div class="main-content">
     <div class="main-content-spacer"></div>
-    <div class="menu-title">
-      <span id="partners"> &nbsp; </span>
-      Partnerships
+    <div class="supporter-header" id="business">
+      Become a Business / Corporate Winter Sustainer
+      <p>All of our corporate sponsors will be recognized in the final week of our drive, as well as displayed in our Resource Center.</p>
     </div>
-    <p class="info-para last">
-      We work to ensure that individuals who have experienced homelessness have a real voice in the creation of our programs and services. SSS has established an Advisory Collaborative composed of diverse community representatives including individuals experiencing homelessness, civic leaders, social service agencies and volunteers, physical and mental health providers, faith leaders, community meal organizers, and educators. The urgency and enormity of need in our backyard warrants an “all hands on deck” approach to caring for one another. No single entity has a monopoly on this work. A dedication to sharing knowledge and resources allows us to bolster and learn from a broad coalition.
-    </p>
+    <div class="support-levels-container">
+      <div class="platinum-level medal-level">
+        <p class="medal-title">Platinum Level: $1000</p>
+        <p class="medal-underbar">Recognized weekly during our winter sustainer collection period of December, January, and February</p>
+      </div>
+      <div class="gold-level medal-level">
+        <p class="medal-title">Gold Level: $500</p>
+        <p class="medal-underbar">Recognized in the week donation is made and bi-weekly during December, January, and February.</p>
+      </div>
+      <div class="silver-level medal-level">
+        <p class="medal-title">Silver Level: $250</p>
+        <p class="medal-underbar">Recognized in the week that donation is made, once a month, and in our final collection week.</p>
+      </div>
+      <div class="bronze-level medal-level">
+        <p class="medal-title">Bronze Level: $100</p>
+        <p class="medal-underbar">Recognized in the week that donation is made and in our final week of collection.</p>
+      </div>
+    </div>
+    <div id="follower"></div>
   </div>
-
   <script src="./scripts/main.js"></script>
-</body>
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  <script src="./scripts/ltc-payments.js"></script></body>
 </html>
