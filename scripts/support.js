@@ -63,6 +63,7 @@ var sustainerButtons = {
 
 const sustainerTypes = {
   business: 'Business / Corporate',
+  individual: 'Individual',
 };
 
 const amounts = {

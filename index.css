@@ -498,6 +498,7 @@ a.triptych-link:visited {
   }
 
   .top-container {
+    z-index: 5;
     top: 0;
     overflow:hidden;
     position: fixed;
