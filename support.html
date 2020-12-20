@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="google-site-verification" content="b5B7f5A3afGxk49yZLO-lWVESIn-5qkOYM8JDIaJ4F0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand|Hind" rel="stylesheet">
+  <title>Sheltering Silverton</title>
+  <link rel="stylesheet" href="support.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./assets/loader/loader.css">
+</head>
+<body>
+  <div class="top-container" id="sticky-desktop" aria-roledescription="navigation">
+    <div id="donate" class="mobile-nav-assist"></div>
+    <div class="menu-opener" id="sticky-mobile">
+      <i id="menu-open" class="material-icons">menu</i>
+      <i id="menu-clox" class="material-icons nosho">close</i>
+    </div>
+    <a href="#" class="small-home-icon">
+      <img class="small-home-icon-img" src="./assets/SSS_Logo_CT_80.png" alt="Sheltering Silverton"/>
+    </a>
+    <div class="org-title">
+      <div class="image-container">
+        <a href="#">
+          <img src="./assets/SSS_Logo_CT_400.png" alt="Sheltering Silverton"/>
+        </a>
+      </div>
+      <div class="heading-container nosho">
+        <h1 style="display: none;">Sheltering Silverton</h1>
+        <h2>
+          A Collaborative Community Response to Homelessness
+        </h2>
+      </div>
+    </div>
+    <div class="menu-options">
+      <ul class="menu-items">
+        <li class="nav-item"><a href="./index.html#mission">Mission</a></li>
+        <li class="nav-item"><a href="#"></a>Take Action</a></li>
+        <li class="nav-item"><a href="./programs.html">Programs</a></li>
+        <li class="nav-item hold"><a href="./partners.html">Partners</a></li>
+        <li class="nav-item hold">Volunteer</li>
+        <li class="nav-item"><a href="index.html#contact">Contact</a></li>
+        <li class="nav-item donate"><a href="#donate">Donate</a></li>
+        <li class="nav-item search hold"><i class="material-icons">search</i></li>
+      </ul>
+    </div>
+  </div>
+  <div id="donate-modal" class="nosho">
+    <div class="loading-mask nosho">
+      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+      <p class="paypal-loading-msg">TAKING YOU TO PAYPAL</p>
+    </div>
+    <div id="donate-clox"><i class="material-icons">close</i></div>
+    <div class="donate-title">
+      <h3>Donate to Sheltering Silverton</h3>
+    </div>
+    <div class="paypal-btn-container">
+      <p class="donate-msg">
+        Your contribution allows us to continue our work caring for our unhoused neighbors.  Thank you!
+      </p>
+      <form id="paypal-form" action="https://www.paypal.com/donate" method="post" target="_top">
+        <input type="hidden" name="hosted_button_id" value="FP2Z8RZETEURE" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+      </form>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="main-content-spacer"></div>
+    <div class="nosho" id="supporter-engage-modal-mask"></div>
+    <div class="nosho" id="supporter-engage-modal" role="dialog">
+      <div>
+        <button id="close-support-modal" style="float: right;">close</button>
+      </div>
+      <div>
+        <p class="title">Become one of Sheltering Silverton's</p>
+        <p class="title"><span id="sustainer-type">Business / Corporate</span> <span id="sustainer-level">Platinum</span> Winter Sustainers</p>
+        <p class="title" id="support-amount">$1000</p>
+        <p id="button-container">
+
+        </p>
+      </div>
+    </div>
+    <div class="supporter-header" id="business">
+      Become a Business / Corporate Winter Sustainer
+      <p>All of our corporate sponsors will be recognized in the final week of our drive, as well as displayed in our Resource Center.</p>
+    </div>
+    <div class="support-levels-container">
+      <div class="platinum-level medal-level" data-level="platinum" data-supporter="business" data-amount="$1000">
+        <p class="medal-title">Platinum Level: $1000</p>
+        <p class="medal-underbar">Recognized weekly during our winter sustainer collection period of December, January, and February</p>
+      </div>
+      <div class="gold-level medal-level" data-level="gold" data-supporter="business" data-amount="$500">
+        <p class="medal-title">Gold Level: $500</p>
+        <p class="medal-underbar">Recognized in the week donation is made and bi-weekly during December, January, and February.</p>
+      </div>
+      <div class="silver-level medal-level" data-level="silver" data-supporter="business" data-amount="$250">
+        <p class="medal-title">Silver Level: $250</p>
+        <p class="medal-underbar">Recognized in the week that donation is made, once a month, and in our final collection week.</p>
+      </div>
+      <div class="bronze-level medal-level" data-level="bronze" data-supporter="business" data-amount="$100">
+        <p class="medal-title">Bronze Level: $100</p>
+        <p class="medal-underbar">Recognized in the week that donation is made and in our final week of collection.</p>
+      </div>
+    </div>
+
+    <div class="main-content-spacer"></div>
+
+    <div class="supporter-header" id="individual">
+      Become an Individual Winter Sustainer
+      <!-- <p>All of our corporate sponsors will be recognized in the final week of our drive, as well as displayed in our Resource Center.</p> -->
+      <p />
+    </div>
+    <div class="support-levels-container">
+      <div class="platinum-level medal-level" data-level="platinum" data-supporter="individual" data-amount="$500">
+        <p class="medal-title">Platinum Level: $1000</p>
+        <p class="medal-underbar">Recognized weekly during our winter sustainer collection period of December, January, and February</p>
+      </div>
+      <div class="gold-level medal-level" data-level="gold" data-supporter="individual" data-amount="$250">
+        <p class="medal-title">Gold Level: $500</p>
+        <p class="medal-underbar">Recognized in the week donation is made and bi-weekly during December, January, and February.</p>
+      </div>
+      <div class="silver-level medal-level" data-level="silver" data-supporter="individual" data-amount="$100">
+        <p class="medal-title">Silver Level: $250</p>
+        <p class="medal-underbar">Recognized in the week that donation is made, once a month, and in our final collection week.</p>
+      </div>
+      <div class="bronze-level medal-level" data-level="bronze" data-supporter="individual" data-amount="$50">
+        <p class="medal-title">Bronze Level: $100</p>
+        <p class="medal-underbar">Recognized in the week that donation is made and in our final week of collection.</p>
+      </div>
+    </div>
+
+    <div class="main-content-spacer"></div>
+  </div>
+  <script src="./scripts/support.js"></script>
+  <script src="./scripts/main.js"></script>
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  <script src="./scripts/ltc-payments.js"></script></body>
+</html>

@@ -185,12 +185,80 @@ a.triptych-link:visited {
   font-family: 'Quicksand', sans-serif;
 }
 
+.supporter-header,
 .triptych-header {
   text-align: center;
   font-size: 24px;
   font-weight: 900;
   margin-bottom: 32px;
   margin-top: 24px;
+}
+
+/* .platinum-level,
+.medal-level {
+  width: initial;
+} */
+
+.supporter-header > p {
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.65;
+}
+
+.platinum-level {
+  background-color: silver;
+  margin-bottom: 16px;
+  /* width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px; */
+}
+
+.gold-level {
+  background-color: gold;
+  margin-bottom: 16px;
+  /* margin-left: 8px;
+  margin-right: 8px;
+  width: calc(33.33% - 16px);
+  float: left; */
+}
+
+.silver-level {
+  background-color: paleturquoise;
+  margin-bottom: 16px;
+  /* margin-left: 8px;
+  margin-right: 8px;
+  width: calc(33.33% - 16px);
+  float: left; */
+}
+
+.bronze-level {
+  background-color: burlywood;
+  margin-bottom: 16px;
+  /* margin-left: 8px;
+  margin-right: 8px;
+  width: calc(33.33% - 16px);
+  float: left; */
+}
+
+.medal-level {
+  padding: 40px;
+  border-radius: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.medal-title {
+  font-weight: bold;
+  font-size: 1.45em;
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 2px;
+}
+
+.medal-underbar {
+  margin-top: 0;
+  font-style: italic;
+  opacity: 0.85;
 }
 
 .triptych-panel {
@@ -430,6 +498,7 @@ a.triptych-link:visited {
   }
 
   .top-container {
+    z-index: 5;
     top: 0;
     overflow:hidden;
     position: fixed;
@@ -577,6 +646,21 @@ a.triptych-link:visited {
   .ltc-calendar-sponsor-msg {
     width: 100%;
     height: 48px;
+  }
+
+  .platinum-level {
+    background-color: silver;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+  }
+
+  .bronze-level, .silver-level, .gold-level {
+    width: calc(33.33% - 16px);
+    float: left;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 
   .menu-title > span {
