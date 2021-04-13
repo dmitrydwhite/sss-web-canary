@@ -60,6 +60,10 @@ button#volunteer:hover {
   margin-top: 8px;
 }
 
+.centered {
+  text-align: center;
+}
+
 .triptych-error {
   color: red;
   font-weight: bold;
